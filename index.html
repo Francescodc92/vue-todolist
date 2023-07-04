@@ -20,16 +20,35 @@
 
 
     <div id="app">
-      <ul class="list-unstyled">
-        <li v-for="(singleObject, index) in todoList">
-        <span :class="singleObject.done ? 'done': '' ">
-          {{singleObject.text}}
-        </span>
-          <a href="" class="text-decoration-none ms-5"
-          @click.prevent="removeItem(index)"
-          >X</a>
-        </li>
-      </ul>
+      <div class="container">
+        <form class="my-5" @submit.prevent="addTodo()">
+            <div class="mb-3">
+              <label for="newTodo" class="form-label">
+                Aggiungi Nuovo
+              </label>
+              <input type="text"
+              required
+               class="form-control" 
+               id="newTodo"
+               v-model="newTodo"
+                aria-describedby="emailHelp"
+              >
+            </div>
+            <button type="submit" class="btn btn-primary">Aggiungi</button>
+        </form>
+      
+          <!--end form-->
+          <ul class="list-unstyled">
+            <li v-for="(singleTodo, index) in todoList">
+            <span :class="singleTodo.done ? 'done': '' ">
+              {{singleTodo.text}}
+            </span>
+              <a href="" class="text-decoration-none ms-5"
+              @click.prevent="removeTodo(index)"
+              >X</a>
+            </li>
+          </ul>
+      </div>
     </div>
     <!--vue container-->
 

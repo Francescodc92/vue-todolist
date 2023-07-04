@@ -25,12 +25,27 @@ RAGIONAMENTO BASE
   -al click far partire una funzione
 3. creare una funzione in methods che (passandole l'index) fà lo splice dell'elemento (oggetto) dall'array
 di conseguenza l'elemento verrà eliminato anche dall'html
+   //-------------------------------------
+- MILESTONE 3 :
+  - Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
+
+RAGIONAMENTO BASE
+creare un form con un input , al submit del form far partire una funzione che aggiunge il testo al nuovo oggetto nell'array 
+  - la funzione dovrà pushare un oggetto nell'array che avrà come testo il contenuto dell'input e come 
+
+//-------------------------------------
+
+- BONUS
+  - oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
+  -  cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
+
 
 */
 const { createApp } = Vue;
 createApp({
   data() {
     return {
+      newTodo: "",
       todoList:[
         {
           text: 'fare la spesa',
@@ -52,8 +67,15 @@ createApp({
     }
   },
   methods:{
-    removeItem(index){
+    removeTodo(index){
       this.todoList.splice(index, 1);
+    },
+    addTodo(){
+      const newObject = {
+        text: this.newTodo,
+        done: false,
+      }
+      this.todoList.push(newObject)
     }
   }
 }).mount('#app');
