@@ -16,6 +16,9 @@
  2. aggiungere un li all'interno che riceverà un ciclo (v-for), in maniera da essere ripetuto tante volte quanti sono gli elementi dell'array
  3. dare all'li una classe legata ad una condizione che verifica lo stato del done dell'oggetto 
   - creare una classe utilitaria nell'css che verrà aggiunta in caso la condizione sia verificata (ossia in caso l'elemento della lista abbia come done il valore true)
+  //-------------------------------------
+  - MILESTONE 2 :
+  - Visualizzare a fianco ad ogni item ha una "x": cliccando su di essa, il todo viene rimosso dalla lista.
 
 */
 const { createApp } = Vue;
