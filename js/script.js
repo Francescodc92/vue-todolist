@@ -32,20 +32,6 @@ di conseguenza l'elemento verrà eliminato anche dall'html
 RAGIONAMENTO BASE
 creare un form con un input , al submit del form far partire una funzione che aggiunge il testo al nuovo oggetto nell'array 
   - la funzione dovrà pushare un oggetto nell'array che avrà come testo il contenuto dell'input e come 
-
-//-------------------------------------
-
-- BONUS
-  - oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
-  -  cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
-
-bonus 1:
- ....
-bonus 2: 
-  1. aggiungere un event listener all'elemento che contiene il testo ,
-  2. al click scatenare una funzione che inverte il valore del done
-
-
 */
 const { createApp } = Vue;
 createApp({
@@ -76,7 +62,6 @@ createApp({
     removeTodo(index){
       this.todoList.splice(index, 1);
     },
-    /* teoricamente funziona ma la funzione viene chiamata 2 volte , la prima stampa perchè il this.newTodo != 0 poi si svuota this.newTodo = ""; e quindi la seconda volta la funzione viene chiamata ma non stampa nulla dato che la condizione this.newTodo != 0 dà false */
     addTodo(){
       console.log('ok 1')
       if(this.newTodo != 0){
@@ -88,9 +73,6 @@ createApp({
         this.newTodo = "";
       }
     },
-    cangeDoneStatus(index){
-      this.todoList[index].done = !this.todoList[index].done;
-    }
   },
   
 }).mount('#app');
