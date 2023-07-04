@@ -20,11 +20,14 @@
 
 
     <div id="app">
-      <ul>
-        <li v-for="singleObject in todoList" 
-        :class="singleObject.done ? 'done': '' "
-        >
+      <ul class="list-unstyled">
+        <li v-for="(singleObject, index) in todoList">
+        <span :class="singleObject.done ? 'done': '' ">
           {{singleObject.text}}
+        </span>
+          <a href="" class="text-decoration-none ms-5"
+          @click.prevent="removeItem(index)"
+          >X</a>
         </li>
       </ul>
     </div>
