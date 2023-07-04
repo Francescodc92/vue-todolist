@@ -63,8 +63,7 @@ createApp({
       this.todoList.splice(index, 1);
     },
     addTodo(){
-      console.log('ok 1')
-      if(this.newTodo != 0){
+      if(this.newTodo.trim() != ""){
         const newObject = {
           text: this.newTodo,
           done: false,
