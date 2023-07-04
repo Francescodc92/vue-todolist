@@ -19,6 +19,12 @@
   //-------------------------------------
   - MILESTONE 2 :
   - Visualizzare a fianco ad ogni item ha una "x": cliccando su di essa, il todo viene rimosso dalla lista.
+RAGIONAMENTO BASE
+1. creare un a/span/button in ogni li 
+2. aggiungere l'evento click (@click="")
+  -al click far partire una funzione
+3. creare una funzione in methods che (passandole l'index) fà lo splice dell'elemento (oggetto) dall'array
+di conseguenza l'elemento verrà eliminato anche dall'html
 
 */
 const { createApp } = Vue;
