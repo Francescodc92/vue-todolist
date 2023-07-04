@@ -39,6 +39,12 @@ creare un form con un input , al submit del form far partire una funzione che ag
   - oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
   -  cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
 
+bonus 1:
+ ....
+bonus 2: 
+  1. aggiungere un event listener all'elemento che contiene il testo ,
+  2. al click scatenare una funzione che inverte il valore del done
+
 
 */
 const { createApp } = Vue;
@@ -74,8 +80,12 @@ createApp({
       const newObject = {
         text: this.newTodo,
         done: false,
-      }
-      this.todoList.push(newObject)
+      };
+      this.todoList.push(newObject);
+      this.newTodo = "";
+    },
+    cangeDoneStatus(index){
+      this.todoList[index].done = !this.todoList[index].done;
     }
   }
 }).mount('#app');

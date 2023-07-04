@@ -40,7 +40,11 @@
           <!--end form-->
           <ul class="list-unstyled">
             <li v-for="(singleTodo, index) in todoList">
-            <span :class="singleTodo.done ? 'done': '' ">
+            <span 
+              class="text-todo"
+              :class="singleTodo.done ? 'done': '' "
+              @click="cangeDoneStatus(index)"
+            >
               {{singleTodo.text}}
             </span>
               <a href="" class="text-decoration-none ms-5"

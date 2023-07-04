@@ -9,3 +9,6 @@
 .done{
   text-decoration: line-through;
 }
+.text-todo{
+  cursor: pointer;
+}
