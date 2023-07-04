@@ -21,7 +21,10 @@
 
     <div id="app">
       <div class="container">
-        <form class="my-5" @submit.prevent="addTodo()">
+        <form class="my-5" 
+          @submit.prevent="addTodo()"
+          @keyup.enter.prevent="addTodo()" 
+        >
             <div class="mb-3">
               <label for="newTodo" class="form-label">
                 Aggiungi Nuovo
@@ -34,7 +37,7 @@
                 aria-describedby="emailHelp"
               >
             </div>
-            <button type="submit" class="btn btn-primary">Aggiungi</button>
+            <button type="b" class="btn btn-primary">Aggiungi</button>
         </form>
       
           <!--end form-->

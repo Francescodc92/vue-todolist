@@ -76,16 +76,21 @@ createApp({
     removeTodo(index){
       this.todoList.splice(index, 1);
     },
+    /* teoricamente funziona ma la funzione viene chiamata 2 volte , la prima stampa perchè il this.newTodo != 0 poi si svuota this.newTodo = ""; e quindi la seconda volta la funzione viene chiamata ma non stampa nulla dato che la condizione this.newTodo != 0 dà false */
     addTodo(){
-      const newObject = {
-        text: this.newTodo,
-        done: false,
-      };
-      this.todoList.push(newObject);
-      this.newTodo = "";
+      console.log('ok 1')
+      if(this.newTodo != 0){
+        const newObject = {
+          text: this.newTodo,
+          done: false,
+        };
+        this.todoList.push(newObject);
+        this.newTodo = "";
+      }
     },
     cangeDoneStatus(index){
       this.todoList[index].done = !this.todoList[index].done;
     }
-  }
+  },
+  
 }).mount('#app');
