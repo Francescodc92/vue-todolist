@@ -42,17 +42,23 @@
       
           <!--end form-->
           <ul class="list-unstyled">
-            <li v-for="(singleTodo, index) in todoList">
-            <span 
-              class="text-todo"
-              :class="singleTodo.done ? 'done': '' "
+            <li 
+              v-for="(singleTodo, index) in todoList"
               @click="cangeDoneStatus(index)"
+              class="todo-element d-flex justify-content-between align-items-center border px-2 py-2 mt-2"
+            >
+            <span 
+              class=" text-capitalize"
+              :class="singleTodo.done ? 'done': '' "
             >
               {{singleTodo.text}}
             </span>
-              <a href="" class="text-decoration-none ms-5"
+            <a href="" 
+            class="todo-delete text-decoration-none px-2 py-1 border "
               @click.prevent="removeTodo(index)"
-              >X</a>
+            >
+              X
+            </a>
             </li>
           </ul>
       </div>

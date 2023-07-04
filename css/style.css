@@ -9,6 +9,22 @@
 .done{
   text-decoration: line-through;
 }
-.text-todo{
+.todo-element{
   cursor: pointer;
+  transition: background-color 200ms ease-in-out;
+}
+
+.todo-element:hover{
+  background-color: #eee;
+}
+
+.todo-delete{
+  color: rgb(199, 77, 77);
+  transition: background-color 200ms ease-in-out,
+              color 200ms ease-in-out;
+}
+
+.todo-delete:hover{
+  background-color: rgb(199, 77, 77);
+  color: #fff;
 }
