@@ -18,10 +18,28 @@
   - creare una classe utilitaria nell'css che verrà aggiunta in caso la condizione sia verificata (ossia in caso l'elemento della lista abbia come done il valore true)
 
 */
+const { createApp } = Vue;
 createApp({
   data() {
     return {
-      message: 'Hello Vue!'
+      todoList:[
+        {
+          text: 'fare la spesa',
+          done: false,
+        },
+        {
+          text: "finire l'esercizio",
+          done: false,
+        },
+        {
+          text: 'ricordare il Q&A con i tutor alle 15:30 ',
+          done: true,
+        },
+        {
+          text: 'ricordarsi di pushare ',
+          done: false,
+        }
+      ]
     }
   }
-}).mount('#app')
+}).mount('#app');

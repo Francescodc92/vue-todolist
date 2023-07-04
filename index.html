@@ -20,7 +20,13 @@
 
 
     <div id="app">
-      {{ message }}
+      <ul>
+        <li v-for="singleObject in todoList" 
+        :class="singleObject.done ? 'done': '' "
+        >
+          {{singleObject.text}}
+        </li>
+      </ul>
     </div>
     <!--vue container-->
 
