@@ -25,7 +25,10 @@ createApp({
     removeTodo(index){
       this.todoList.splice(index, 1);
     },
-    /* teoricamente funziona ma la funzione viene chiamata 2 volte , la prima stampa perchè il this.newTodo != 0 poi si svuota this.newTodo = ""; e quindi la seconda volta la funzione viene chiamata ma non stampa nulla dato che la condizione this.newTodo != 0 dà false */
+    /* teoricamente funziona ma la funzione viene chiamata 2 volte , la prima stampa perchè il this.newTodo != 0 poi si svuota this.newTodo = ""; e quindi la seconda volta la funzione viene chiamata ma non stampa nulla dato che la condizione this.newTodo != 0 dà false 
+    post correzzione:
+    inutile far partire il  @keyup.enter.prevent="addTodo()"  dal form dato che lo fà di default 
+    */
     addTodo(){
       console.log('ok 1')
       if(this.newTodo.trim() != ""){
